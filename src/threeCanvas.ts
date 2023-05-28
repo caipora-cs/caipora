@@ -11,7 +11,7 @@ export const initThreeJsScene = (node: HTMLDivElement) => {
   const scene = new THREE.Scene()
   const camera = new THREE.PerspectiveCamera(75, height / width, 0.1, 1000)
   const { globe } :any = loadGlobe();
-//THREE.Object3D
+//to use add should be THREE.Object3D type
   const renderer = new THREE.WebGLRenderer()
   renderer.setClearColor(0xffffff)
   renderer.setSize(height, width)
