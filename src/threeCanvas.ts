@@ -2,6 +2,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { loadGlobe } from './components/globe/globe'
 
+
 export const width = 1000
 export const height = 1000
 
@@ -34,5 +35,6 @@ export const initThreeJsScene = (node: HTMLDivElement) => {
   }
 
   animate()
-  loadGlobe();
+  const { globe } = loadGlobe();
+  scene.add(globe);
 }
