@@ -1,10 +1,12 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { loadGlobe } from './components/globe/globe'
 
 export const width = 1000
 export const height = 1000
 
 export const initThreeJsScene = (node: HTMLDivElement) => {
+  
   const scene = new THREE.Scene()
   const camera = new THREE.PerspectiveCamera(75, height / width, 0.1, 1000)
 
@@ -32,4 +34,5 @@ export const initThreeJsScene = (node: HTMLDivElement) => {
   }
 
   animate()
+  loadGlobe();
 }
