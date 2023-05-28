@@ -10,7 +10,8 @@ export const initThreeJsScene = (node: HTMLDivElement) => {
   
   const scene = new THREE.Scene()
   const camera = new THREE.PerspectiveCamera(75, height / width, 0.1, 1000)
-
+  const { globe } :any = loadGlobe();
+//THREE.Object3D
   const renderer = new THREE.WebGLRenderer()
   renderer.setClearColor(0xffffff)
   renderer.setSize(height, width)
@@ -35,6 +36,4 @@ export const initThreeJsScene = (node: HTMLDivElement) => {
   }
 
   animate()
-  const { globe } = loadGlobe();
-  scene.add(globe);
 }
