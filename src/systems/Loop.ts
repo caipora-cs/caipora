@@ -1,14 +1,17 @@
-import { Clock } from 'three';
+import { Clock, Camera, Scene, WebGLRenderer } from 'three';
 
 const clock = new Clock();
 
 class Loop {
+  private camera: Camera;
+  private scene: Scene;
+  private renderer: WebGLRenderer;
+  private updatables: any[];
   constructor(camera, scene, renderer) {
-    this.camera  = camera;
+    this.camera = camera;
     this.scene = scene;
     this.renderer = renderer;
     this.updatables = [];
-    //rewrite this in typescript
   }
 
   start() {
@@ -34,7 +37,10 @@ class Loop {
     // );
 
     for (const object of this.updatables) {
-      object.tick(delta);
+      if (typeof object.tick === 'function')
+    {object.tick(delta);}
+      else
+    {console.warn('Not a tickable object', object);}
     }
   }
 }

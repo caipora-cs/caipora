@@ -1,25 +1,32 @@
-const setSize = (container, camera, renderer) => {
-  camera.aspect = container.clientWidth / container.clientHeight;
-  camera.updateProjectionMatrix();
-
-  renderer.setSize(container.clientWidth, container.clientHeight);
-  renderer.setPixelRatio(window.devicePixelRatio);
-};
-
 class Resizer {
-  constructor(container, camera, renderer) {
+  constructor(private container: HTMLElement, private camera: THREE.PerspectiveCamera, private renderer: THREE.WebGLRenderer) {
     // set initial size
-    setSize(container, camera, renderer);
+    this.setSize();
 
-    window.addEventListener('resize', () => {
-      // set the size again if a resize occurs
-      setSize(container, camera, renderer);
-      // perform any custom actions
-      this.onResize();
-    });
+    window.addEventListener('resize', this.onWindowResize);
   }
 
+  private setSize = () => {
+    this.camera.aspect = this.container.clientWidth / this.container.clientHeight;
+    this.camera.updateProjectionMatrix();
+
+    this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
+    this.renderer.setPixelRatio(window.devicePixelRatio);
+  };
+
+  private onWindowResize = () => {
+    // set the size again if a resize occurs
+    this.setSize();
+    // perform any custom actions
+    this.onResize();
+  };
+
   onResize() {}
+
+  dispose() {
+    window.removeEventListener('resize', this.onWindowResize);
+  }
 }
 
 export { Resizer };
+

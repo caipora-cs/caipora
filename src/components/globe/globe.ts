@@ -8,7 +8,7 @@ import { setupModel } from './setupModel'
   ]);
   console.log('Zoooommm!',globeData);
   const globe = setupModel(globeData);
-  globe.position.set(7, 0,-10);
+  globe.position.set(0, 0,2.5);
   return { globe };
 } 
 
