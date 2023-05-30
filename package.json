@@ -6,10 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|html|json)\""
   },
   "devDependencies": {
     "@types/three": "^0.146.0",
+    "prettier": "^2.8.8",
     "typescript": "^4.6.4",
     "vite": "^3.2.6"
   },

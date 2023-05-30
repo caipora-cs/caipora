@@ -1,4 +1,4 @@
-import { Clock, Camera, Scene, WebGLRenderer, AnimationMixer } from 'three';
+import { Clock, Camera, Scene, WebGLRenderer, AnimationMixer } from "three";
 
 const clock = new Clock();
 
@@ -15,8 +15,8 @@ class Loop {
     this.updatables = [];
   }
 
-  //Mixer for animations in the scene 
-  addMixer(mixer : AnimationMixer) {
+  //Mixer for animations in the scene
+  addMixer(mixer: AnimationMixer) {
     this.mixers.push(mixer);
   }
 
@@ -47,10 +47,11 @@ class Loop {
     }
 
     for (const object of this.updatables) {
-      if (typeof object.tick === 'function')
-    {object.tick(delta);}
-      else
-    {console.warn('Not a tickable object', object);}
+      if (typeof object.tick === "function") {
+        object.tick(delta);
+      } else {
+        console.warn("Not a tickable object", object);
+      }
     }
   }
 }

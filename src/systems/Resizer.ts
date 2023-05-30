@@ -1,16 +1,24 @@
 class Resizer {
-  constructor(private container: HTMLElement, private camera: THREE.PerspectiveCamera, private renderer: THREE.WebGLRenderer) {
+  constructor(
+    private container: HTMLElement,
+    private camera: THREE.PerspectiveCamera,
+    private renderer: THREE.WebGLRenderer
+  ) {
     // set initial size
     this.setSize();
 
-    window.addEventListener('resize', this.onWindowResize);
+    window.addEventListener("resize", this.onWindowResize);
   }
 
   private setSize = () => {
-    this.camera.aspect = this.container.clientWidth / this.container.clientHeight;
+    this.camera.aspect =
+      this.container.clientWidth / this.container.clientHeight;
     this.camera.updateProjectionMatrix();
 
-    this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
+    this.renderer.setSize(
+      this.container.clientWidth,
+      this.container.clientHeight
+    );
     this.renderer.setPixelRatio(window.devicePixelRatio);
   };
 
@@ -24,9 +32,8 @@ class Resizer {
   onResize() {}
 
   dispose() {
-    window.removeEventListener('resize', this.onWindowResize);
+    window.removeEventListener("resize", this.onWindowResize);
   }
 }
 
 export { Resizer };
-

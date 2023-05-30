@@ -1,14 +1,12 @@
-import { loadGlobe } from './components/globe/globe';
-import { createCamera } from './components/camera';
-import { createLights } from './components/lights';
-import { createScene } from './components/scene';
+import { loadGlobe } from "./components/globe/globe";
+import { createCamera } from "./components/camera";
+import { createLights } from "./components/lights";
+import { createScene } from "./components/scene";
 
-import { createRenderer } from './systems/renderer';
-import { createControls } from './systems/controls';
-import { Resizer } from './systems/Resizer';
-import { Loop } from './systems/Loop';
-
-
+import { createRenderer } from "./systems/renderer";
+import { createControls } from "./systems/controls";
+import { Resizer } from "./systems/Resizer";
+import { Loop } from "./systems/Loop";
 
 //Find a way to declare this variables as private class fields with TS types
 let camera: any;
@@ -29,7 +27,7 @@ class World {
 
     const { ambientLight, mainLight } = createLights();
 
-   // loop.updatables.push(controls);
+    // loop.updatables.push(controls);
     container.append(renderer.domElement);
     scene.add(ambientLight, mainLight);
 
@@ -57,4 +55,3 @@ class World {
 }
 
 export { World };
-
