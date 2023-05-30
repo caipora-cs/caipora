@@ -1,4 +1,4 @@
-import { Clock, Camera, Scene, WebGLRenderer } from 'three';
+import { Clock, Camera, Scene, WebGLRenderer, AnimationMixer } from 'three';
 
 const clock = new Clock();
 
@@ -7,11 +7,17 @@ class Loop {
   private scene: Scene;
   private renderer: WebGLRenderer;
   private updatables: any[];
+  private mixers: AnimationMixer[] = [];
   constructor(camera, scene, renderer) {
     this.camera = camera;
     this.scene = scene;
     this.renderer = renderer;
     this.updatables = [];
+  }
+
+  //Mixer for animations in the scene 
+  addMixer(mixer : AnimationMixer) {
+    this.mixers.push(mixer);
   }
 
   start() {
@@ -35,6 +41,10 @@ class Loop {
     // console.log(
     //   `The last frame rendered in ${delta * 1000} milliseconds`,
     // );
+    // update each mixer with the time delta
+    for (const mixer of this.mixers) {
+      mixer.update(delta);
+    }
 
     for (const object of this.updatables) {
       if (typeof object.tick === 'function')

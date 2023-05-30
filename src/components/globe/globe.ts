@@ -1,15 +1,29 @@
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { setupModel } from './setupModel'
+import { AnimationMixer } from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { setupModel } from './setupModel';
 
- async function loadGlobe() {
-  const loader = new GLTFLoader()
-  const [globeData] = await Promise.all ([
-  loader.loadAsync('/globe/scene.gltf')
-  ]);
-  console.log('Zoooommm!',globeData);
+async function loadGlobe() {
+  const loader = new GLTFLoader();
+  const globeData = await loader.loadAsync('/cyberpunk_robot/scene.gltf');
+
+  // Create a mixer to handle the animation playback
+  const mixer = new AnimationMixer(globeData.scene);
+
+  // Create an action for each animation and play it
+  for (const clip of globeData.animations) {
+    const action = mixer.clipAction(clip);
+    action.play();
+  }
+
+  console.log('Globe data:', globeData);
+  
   const globe = setupModel(globeData);
-  globe.position.set(0, 0,2.5);
-  return { globe };
-} 
+  globe.position.set(0, 0, 0);
+
+  // Also return the mixer so that it can be updated every frame
+  return { globe, mixer };
+}
 
 export { loadGlobe };
+
+
