@@ -4,7 +4,7 @@ import { setupModel } from './setupModel';
 
 async function loadGlobe() {
   const loader = new GLTFLoader();
-  const globeData = await loader.loadAsync('/cyberpunk_robot/scene.gltf');
+  const globeData = await loader.loadAsync('/globe/a_windy_day.glb');
 
   // Create a mixer to handle the animation playback
   const mixer = new AnimationMixer(globeData.scene);
