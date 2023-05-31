@@ -14,6 +14,11 @@
   "resolved" "https://registry.npmjs.org/@types/webxr/-/webxr-0.5.0.tgz"
   "version" "0.5.0"
 
+"@types/winbox@^0.2.1":
+  "integrity" "sha512-fN/UQjitix7v3yDmpvzKSnDyKIiOhU5LdAj5Wcf/eRpGapoLwBELAwvVZY/2OBw23PyPKwGZ07oZxBHyIO/e3A=="
+  "resolved" "https://registry.npmjs.org/@types/winbox/-/winbox-0.2.1.tgz"
+  "version" "0.2.1"
+
 "esbuild-linux-64@0.15.13":
   "integrity" "sha512-rXmnArVNio6yANSqDQlIO4WiP+Cv7+9EuAHNnag7rByAqFVuRusLbGi2697A5dFPNXoO//IiogVwi3AdcfPC6A=="
   "resolved" "https://registry.npmjs.org/esbuild-linux-64/-/esbuild-linux-64-0.15.13.tgz"

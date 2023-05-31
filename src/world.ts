@@ -32,10 +32,10 @@ class World {
     scene.add(ambientLight, mainLight);
     this.resizer = new Resizer(container, camera, renderer);
   }
-  
+
   //Load the models and add them to the scene.
   async init() {
-    const { computer,coffeemat,woodentable, mixer } = await loadModels();
+    const { computer, coffeemat, woodentable, mixer } = await loadModels();
     //controls.target.copy(computer.position);
     loop.addMixer(mixer);
     scene.add(computer, coffeemat, woodentable);

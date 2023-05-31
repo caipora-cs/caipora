@@ -1,5 +1,4 @@
 import "./style.css";
-//import { initThreeJsScene } from './threeCanvas'
 import { World } from "./world";
 
 // const mainElement = document.querySelector<HTMLDivElement>('#app')
@@ -7,6 +6,7 @@ import { World } from "./world";
 //   initThreeJsScene(mainElement)
 // }
 
+declare const WinBox: any;
 async function main() {
   const container = document.querySelector("#scene-container");
   const about = document.querySelector("#about");

@@ -1,16 +1,15 @@
 import { AnimationMixer } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { setupModel } from "./setupModel";
- 
 
 async function loadModels() {
   const loader = new GLTFLoader();
 
   // Load each model in parallel and wait for all of them to be ready
-  const [computerData, coffeematData, woodentableData ] = await Promise.all ([
-  loader.loadAsync("/smol-pc/smol_pc.glb"),
-  loader.loadAsync("/coffeemat/coffeemat.glb"),
-  loader.loadAsync("/wooden_table/wooden_table.glb"),
+  const [computerData, coffeematData, woodentableData] = await Promise.all([
+    loader.loadAsync("/smol-pc/smol_pc.glb"),
+    loader.loadAsync("/coffeemat/coffeemat.glb"),
+    loader.loadAsync("/wooden_table/wooden_table.glb"),
   ]);
 
   // Create a mixer to handle the animation playback
@@ -22,33 +21,32 @@ async function loadModels() {
     action.play();
   }
 
-coffeematData.scene.traverse((object) => {
-  console.log(object.name);
-});
+  coffeematData.scene.traverse((object) => {
+    console.log(object.name);
+  });
 
   function logObjectHierarchy(obj, level = 0) {
-  var prefix = new Array(level + 1).join("..");
-  console.log(prefix + " " + obj.name);
+    var prefix = new Array(level + 1).join("..");
+    console.log(prefix + " " + obj.name);
 
-  for (var i = 0; i < obj.children.length; i++) {
-    logObjectHierarchy(obj.children[i], level + 1);
+    for (var i = 0; i < obj.children.length; i++) {
+      logObjectHierarchy(obj.children[i], level + 1);
+    }
   }
-}
 
-coffeematData.scene.traverse((object) => logObjectHierarchy(object));
+  coffeematData.scene.traverse((object) => logObjectHierarchy(object));
 
   coffeematData.scene.traverse((object) => {
-if (object.name === 'Sketchfab_model') {
-object.scale.set(0.004, 0.004, 0.004);
-}
-  } );
+    if (object.name === "Sketchfab_model") {
+      object.scale.set(0.004, 0.004, 0.004);
+    }
+  });
 
   woodentableData.scene.traverse((object) => {
-if (object.name === 'Sketchfab_model') {
-object.rotation.z = Math.PI / -2;
-}
-} );
-
+    if (object.name === "Sketchfab_model") {
+      object.rotation.z = Math.PI / -2;
+    }
+  });
 
   // Log the data so that we can explore it in the console
   console.log("Computer data:", computerData);
