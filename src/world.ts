@@ -49,7 +49,7 @@ class World {
     loop.addMixer(mixer1);
     loop.addMixer(mixer2);
     loop.addMixer(mixer3);
-    scene.add(computer, coffeemat, woodentable, monsterplant, portal);
+    scene.add(computer, coffeemat, woodentable, monsterplant, );
   }
 
   //Render the scene.

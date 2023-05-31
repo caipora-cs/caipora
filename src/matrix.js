@@ -25,10 +25,10 @@
         {
             //Black BG for the canvas
             //translucent BG to show trail
-            ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
+            ctx.fillStyle = "rgba(219,215,210, 0.04)";
             ctx.fillRect(0, 0, c.width, c.height);
 
-            ctx.fillStyle = "#00fa9a";//green text
+            ctx.fillStyle = "#696969";//green text
             ctx.font = font_size + "px arial";
             //looping over drops
             for(var i = 0; i < drops.length; i++)
