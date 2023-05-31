@@ -1,4 +1,4 @@
-import { loadGlobe } from "./components/globe/globe";
+import { loadModels } from "./components/models/models";
 import { createCamera } from "./components/camera";
 import { createLights } from "./components/lights";
 import { createScene } from "./components/scene";
@@ -8,7 +8,7 @@ import { createControls } from "./systems/controls";
 import { Resizer } from "./systems/Resizer";
 import { Loop } from "./systems/Loop";
 
-//Find a way to declare this variables as private class fields with TS types
+//Todo: Find a way to declare this variables as private class fields with TS types
 let camera: any;
 let controls: any;
 let renderer: any;
@@ -16,29 +16,31 @@ let scene: any;
 let loop: any;
 
 class World {
+  // Resizer declaration is needed to dispose it later
   private resizer: Resizer;
-  //Create a instance of the World class app
+
+  //Create a instance of the World class app. Assemble all the components and systems.
   constructor(container: any) {
     camera = createCamera();
     scene = createScene();
     renderer = createRenderer();
     controls = createControls(camera, renderer.domElement);
     loop = new Loop(camera, scene, renderer);
-
     const { ambientLight, mainLight } = createLights();
-
     // loop.updatables.push(controls);
     container.append(renderer.domElement);
     scene.add(ambientLight, mainLight);
-
     this.resizer = new Resizer(container, camera, renderer);
   }
+  
+  //Load the models and add them to the scene.
   async init() {
-    const { globe, mixer } = await loadGlobe();
-    controls.target.copy(globe.position);
+    const { computer,coffeemat,woodentable, mixer } = await loadModels();
+    //controls.target.copy(computer.position);
     loop.addMixer(mixer);
-    scene.add(globe);
+    scene.add(computer, coffeemat, woodentable);
   }
+
   //Render the scene.
   render() {
     renderer.render(scene, camera);
