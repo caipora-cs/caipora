@@ -40,7 +40,6 @@ class World {
       coffeemat,
       woodentable,
       monsterplant,
-      portal,
       mixer1,
       mixer2,
       mixer3,
