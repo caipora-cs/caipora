@@ -52,25 +52,25 @@ const socials = [
   {
     id: 1,
     title: "GitHub",
-    url: "https://github.com/satnaing",
+    url: "https://github.com/caipora-cs",
     tab: 3,
   },
   {
     id: 2,
-    title: "Dev.to",
-    url: "https://dev.to/satnaing",
+    title: "Twitter",
+    url: "https://twitter.com/caipora_cs",
     tab: 3,
   },
   {
     id: 3,
-    title: "Facebook",
-    url: "https://www.facebook.com/satnaing.dev",
+    title: "Linkedin",
+    url: "www.linkedin.com/in/joao-venancio",
     tab: 1,
   },
   {
     id: 4,
     title: "Instagram",
-    url: "https://instagram.com/satnaing.dev",
+    url: "https://instagram.com/",
     tab: 0,
   },
 ];
