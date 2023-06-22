@@ -9,8 +9,8 @@
   </head>
   <body>
     <!-- Matrix Background -->
-    <canvas id="c"></canvas>
-    <!-- <script src="/src/matrix.js"></script> -->
+    <canvas  id="c"></canvas>
+    <script src="/src/matrix.js"></script>
     <!-- World App from THREE.js -->
     <div id="scene-container"></div>
     <!-- Cyber App Front End -->
@@ -43,6 +43,16 @@
         <ul>
           <li>
             <button id="dev-mode"></button>
+            <script> 
+              //When button is clicked hide the main menu and change display to show the canvas
+              document.getElementById("dev-mode").addEventListener("click", function() {
+                document.getElementById("c").style.display = "block";
+                const h1h3ulnavElements = document.querySelectorAll("h1, h3, ul, nav");
+                h1h3ulnavElements.forEach(element => {
+                  element.style.display = "none";
+                });
+              });
+            </script>
           </li>
         </ul>
       </main>
