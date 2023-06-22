@@ -44,7 +44,7 @@ class World {
       mixer2,
       mixer3,
     } = await loadModels();
-    //controls.target.copy(computer.position);
+    // controls.target.copy(computer.position);
     loop.addMixer(mixer1);
     loop.addMixer(mixer2);
     loop.addMixer(mixer3);
