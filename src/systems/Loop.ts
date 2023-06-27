@@ -50,7 +50,7 @@ class Loop {
       if (typeof object.tick === "function") {
         object.tick(delta);
       } else {
-        console.warn("Not a tickable object", object);
+        // console.warn("Not a tickable object", object);
       }
     }
   }

@@ -42,57 +42,57 @@ async function loadModels() {
   }
   // Put shadows on the objects
   // This one is for the computer
-  computerData.scene.traverse((object) => {
+  computerData.scene.traverse(object => {
     object.castShadow = true;
     object.receiveShadow = true;
   });
 
   // Log the data so that we can explore it in the console
   // This one is to find out the name of the object in the scene
-  coffeematData.scene.traverse((object) => {
-    console.log(object.name);
-  });
+  // coffeematData.scene.traverse(object => {
+  //   console.log(object.name);
+  // });
   // This one is to find out the hierarchy of the object in the scene
-  function logObjectHierarchy(obj, level = 0) {
-    var prefix = new Array(level + 1).join("..");
-    console.log(prefix + " " + obj.name);
-
-    for (var i = 0; i < obj.children.length; i++) {
-      logObjectHierarchy(obj.children[i], level + 1);
-    }
-  }
+  // function logObjectHierarchy(obj, level = 0) {
+  //   var prefix = new Array(level + 1).join("..");
+  //   console.log(prefix + " " + obj.name);
+  //
+  //   for (var i = 0; i < obj.children.length; i++) {
+  //     logObjectHierarchy(obj.children[i], level + 1);
+  //   }
+  // }
   //Call the function you can change the name of the object to find out the hierarchy
-  portalData.scene.traverse((object) => logObjectHierarchy(object));
+  //portalData.scene.traverse(object => logObjectHierarchy(object));
   //Now that we know the name of the object, we can manipulate it
   //Size of the object - Sacalar
-  coffeematData.scene.traverse((object) => {
+  coffeematData.scene.traverse(object => {
     if (object.name === "Sketchfab_model") {
       object.scale.set(0.004, 0.004, 0.004);
     }
   });
-  monsterplantData.scene.traverse((object) => {
+  monsterplantData.scene.traverse(object => {
     if (object.name === "Sketchfab_model") {
       object.scale.set(0.004, 0.004, 0.004);
     }
   });
-  portalData.scene.traverse((object) => {
+  portalData.scene.traverse(object => {
     if (object.name === "Sketchfab_Scene") {
       object.scale.set(0.004, 0.004, 0.004);
     }
   });
   //Position of the object - Vector3
-  woodentableData.scene.traverse((object) => {
+  woodentableData.scene.traverse(object => {
     if (object.name === "Sketchfab_model") {
       object.rotation.z = Math.PI / -2;
     }
   });
 
-  // Log the data so that we can explore it in the console
-  console.log("Computer data:", computerData);
-  console.log("Coffeemat data:", coffeematData);
-  console.log("Woodentable data:", woodentableData);
-  console.log("Monsterplant data:", monsterplantData);
-  console.log("Portal data:", portalData);
+  // // Log the data so that we can explore it in the console
+  // console.log("Computer data:", computerData);
+  // console.log("Coffeemat data:", coffeematData);
+  // console.log("Woodentable data:", woodentableData);
+  // console.log("Monsterplant data:", monsterplantData);
+  // console.log("Portal data:", portalData);
 
   // Wrap the model data in a nice object structure
   const computer = setupModel(computerData);

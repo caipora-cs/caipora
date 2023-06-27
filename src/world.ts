@@ -27,7 +27,7 @@ class World {
     controls = createControls(camera, renderer.domElement);
     loop = new Loop(camera, scene, renderer);
     const { ambientLight, mainLight } = createLights();
-    // loop.updatables.push(controls);
+    loop.updatables.push(controls);
     container.append(renderer.domElement);
     scene.add(ambientLight, mainLight);
     this.resizer = new Resizer(container, camera, renderer);
@@ -48,7 +48,7 @@ class World {
     loop.addMixer(mixer1);
     loop.addMixer(mixer2);
     loop.addMixer(mixer3);
-    scene.add(computer, coffeemat, woodentable, monsterplant, );
+    scene.add(computer, coffeemat, woodentable, monsterplant);
   }
 
   //Render the scene.

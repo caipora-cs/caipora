@@ -142,12 +142,7 @@ export const argTab = (
 
   // 8) if input is 'projects go '
   else if (_.startsWith(inputVal, "projects go ")) {
-    [
-      "1.Blog",
-      "2.Python",
-      "3.Authentication API",
-      "4.Test",
-    ].forEach(t => {
+    ["1.Blog", "2.Python", "3.Authentication API", "4.Test"].forEach(t => {
       hintsCmds = [...hintsCmds, t];
     });
     return hintsCmds;

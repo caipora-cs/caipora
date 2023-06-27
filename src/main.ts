@@ -8,7 +8,7 @@ import { World } from "./world";
 
 async function main() {
   const container = document.querySelector("#scene-container");
- //Create a instance of the World class app
+  //Create a instance of the World class app
   if (container) {
     const world = new World(container);
     //Render the scene. World is the encapsulation of Three.js
@@ -18,6 +18,6 @@ async function main() {
 }
 //it outputs a render method that renders the scene
 //catch errors:
-main().catch((err) => {
+main().catch(err => {
   console.error(err);
 });

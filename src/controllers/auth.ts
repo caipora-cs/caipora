@@ -1,6 +1,6 @@
-import express from 'express';
-import { getUserByEmail, createUser } from '../db/users';
-import { authentication, random } from '../utils/apiutils';
+import express from "express";
+import { getUserByEmail, createUser } from "../db/users";
+import { authentication, random } from "../utils/apiutils";
 
 //Login async logic controller
 export const login = async (req: express.Request, res: express.Response) => {
@@ -14,13 +14,15 @@ export const login = async (req: express.Request, res: express.Response) => {
     }
     //Attempts to fetch user from db using provided email. It also selects the salt and password from
     //a nested authentication Object inside the user Object.
-    const user = await getUserByEmail(email).select('+authentication.salt +authentication.password');
+    const user = await getUserByEmail(email).select(
+      "+authentication.salt +authentication.password"
+    );
 
     if (!user) {
       return res.sendStatus(400);
     }
 
-    //if the password in db doesnt match the expectedHash. (we dont handle raw user passwords) 
+    //if the password in db doesnt match the expectedHash. (we dont handle raw user passwords)
     const expectedHash = authentication(user.authentication.salt, password);
     if (user.authentication.password != expectedHash) {
       return res.sendStatus(403);
@@ -28,15 +30,19 @@ export const login = async (req: express.Request, res: express.Response) => {
 
     // The function then generates a new salt, hashes it with the userId to create a session token, and     saves it in the database.
     const salt = random();
-    user.authentication.sessionToken = authentication(salt, user._id.toString());
+    user.authentication.sessionToken = authentication(
+      salt,
+      user._id.toString()
+    );
     await user.save();
 
     //Finally, the function sets a cookie CAIPORAAUTH and proceed sucessfully
-    res.cookie('CAIPORAAUTH', user.authentication.sessionToken, { domain: 'localhost', path: '/' });
+    res.cookie("CAIPORAAUTH", user.authentication.sessionToken, {
+      domain: "localhost",
+      path: "/",
+    });
     return res.status(200).json(user).end();
-  } 
-
-  catch (error) {
+  } catch (error) {
     console.log(error);
     return res.sendStatus(400);
   }
@@ -53,7 +59,7 @@ export const register = async (req: express.Request, res: express.Response) => {
     }
 
     const existingUser = await getUserByEmail(email);
-  
+
     if (existingUser) {
       return res.sendStatus(400);
     }
@@ -75,4 +81,4 @@ export const register = async (req: express.Request, res: express.Response) => {
     console.log(error);
     return res.sendStatus(400);
   }
-}
+};
