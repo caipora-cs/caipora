@@ -6,7 +6,6 @@ import { World } from "./world";
 //   initThreeJsScene(mainElement)
 // }
 
-declare const WinBox: any;
 async function main() {
   const container = document.querySelector("#scene-container");
  //Create a instance of the World class app

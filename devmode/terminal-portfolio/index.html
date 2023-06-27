@@ -58,7 +58,54 @@
     />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <!-- <div id="root"></div> -->
+    <!-- <script type="module" src="/src/main.tsx"></script> -->
+    <iframe src="terminal.html" id="terminal-app"> </iframe>
+    <div id="scene-container"></div>
+    <!-- Cyber App Front End -->
+    <div class="container">
+      <nav>
+        <ul>
+          <li id="about">/about</li>
+          <li id="contact">/contact</li>
+        </ul>
+      </nav>
+
+      <main>
+        <h1>caipora:$<span class="cursor">|</span></h1>
+        <h3>Find me online:</h3>
+        <ul>
+          <li>
+            <a href="https://twitter.com/caipora_cs" target="_blank">Twitter</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/joao-venancio/" target="_blank"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a href="https://github.com/caipora-cs" target="_blank">Github</a>
+          </li>
+        </ul>
+        <!-- Into the terminal -->
+        <h3>dev_mode:</h3>
+        <ul>
+          <li>
+            <button id="dev-mode"></button>
+            <script> 
+              //When button is clicked hide the main menu and change display to show the canvas
+              document.getElementById("dev-mode").addEventListener("click", function() {
+                document.getElementById("terminal-app").style.display = "block";
+                const h1h3ulnavElements = document.querySelectorAll("h1, h3, ul, nav");
+                h1h3ulnavElements.forEach(element => {
+                  element.style.display = "none";
+                });
+              });
+            </script>
+          </li>
+        </ul>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
