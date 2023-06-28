@@ -11,7 +11,7 @@ Here's a glance at the key features the project offers:
 ## Features
 
 ### World App
-![[Pasted image 20230628131405.png]]
+![alt text](https://github.com/caipora-cs/caipora/blob/master/public/screenshot1.png?raw=true)
 - WebGL GPU acceleration 👾
 - Type enforced and secured ✍🏿
 - Modular, change models, camera, lights easily 🎥
@@ -21,7 +21,7 @@ Here's a glance at the key features the project offers:
 - Diagnostic tools for the models 📊
 
 ### dev_mode (Terminal)
-![[Pasted image 20230628131545.png]]
+![alt text](https://github.com/caipora-cs/caipora/blob/master/public/screenshot2.png?raw=true)
 - Responsive Design 📱💻
 - Multiple themes 🎨
 - Autocomplete feature ✨ (TAB | Ctrl + i)
