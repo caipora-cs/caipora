@@ -30,6 +30,7 @@ Here's a glance at the key features the project offers:
 - Tests ✅
 
 ### API
+![alt text](https://github.com/caipora-cs/caipora/blob/master/public/screenshot3.png?raw=true)
 - MongoDB Atlas cloud deployment ☁️
 - Model View Controller (code-first) based 📚
 - Cookie based authentication (No raw pass) 🍪
