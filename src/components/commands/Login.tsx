@@ -1,16 +1,20 @@
 import React, { useState } from "react";
-import Modal from "react-modal";
+import Modal from "@mui/material/Modal";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
 
 type LoginProps = {
   setCurrentUser: React.Dispatch<React.SetStateAction<string>>;
 };
 
-Modal.setAppElement("#root");
-
 const Login: React.FC<LoginProps> = ({ setCurrentUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,36 +28,64 @@ const Login: React.FC<LoginProps> = ({ setCurrentUser }) => {
     if (response.ok) {
       const data = await response.json();
       console.log("Login successful, user:", data);
-      setCurrentUser(email);
-      setModalIsOpen(false);
+      setCurrentUser(data.username);
+      handleClose();
     } else {
       console.error("Login failed:", response.statusText);
     }
   };
 
+  const body = (
+    <Box
+      sx={{
+        position: "absolute",
+        width: 400,
+        bgcolor: "background.paper",
+        border: "2px solid #000",
+        boxShadow: 24,
+        p: 4,
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+      }}
+    >
+      <TextField
+        label="Email"
+        variant="outlined"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+        required
+      />
+      <TextField
+        label="Password"
+        variant="outlined"
+        type="password"
+        value={password}
+        onChange={e => setPassword(e.target.value)}
+        required
+      />
+      <Button variant="contained" color="primary" onClick={handleSubmit}>
+        Login
+      </Button>
+    </Box>
+  );
+
   return (
     <div>
-      <button onClick={() => setModalIsOpen(true)}>Login</button>
-      <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            required
-          />
-          <button type="submit">Login</button>
-          <button onClick={() => setModalIsOpen(false)}>Close</button>
-        </form>
+      <Button variant="contained" color="primary" onClick={handleOpen}>
+        Login
+      </Button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        {body}
       </Modal>
     </div>
   );
 };
 
 export default Login;
+

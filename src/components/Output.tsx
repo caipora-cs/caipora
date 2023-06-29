@@ -12,7 +12,7 @@ import Projects from "./commands/Projects";
 import Socials from "./commands/Socials";
 import Themes from "./commands/Themes";
 import Login from "./commands/Login";
-// import Register from "./commands/Register";
+import Register from "./commands/Register";
 import { OutputContainer, UsageDiv } from "./styles/Output.styled";
 import { termContext } from "./Terminal";
 import { useContext } from "react";
@@ -50,7 +50,7 @@ const Output: React.FC<Props> = ({ index, cmd }) => {
           themes: <Themes />,
           welcome: <Welcome />,
           whoami: <GeneralOutput>{currentUser}</GeneralOutput>,
-          // register: <Register setCurrentUser={setCurrentUser} />,
+          register: <Register  />,
           login: <Login setCurrentUser={setCurrentUser} />,
         }[cmd]
       }
