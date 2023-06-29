@@ -41,6 +41,8 @@ export const commands: Command = [
   { cmd: "themes", desc: "check available themes", tab: 7 },
   { cmd: "welcome", desc: "display hero section", tab: 6 },
   { cmd: "whoami", desc: "about current user", tab: 7 },
+  { cmd: "register", desc: "register a new user", tab: 5 },
+  { cmd: "login", desc: "login to the system", tab: 5 },
 ];
 
 type Term = {
@@ -48,6 +50,8 @@ type Term = {
   history: string[];
   rerender: boolean;
   index: number;
+  currentUser: string;
+  setCurrentUser: React.Dispatch<React.SetStateAction<string>>;
   clearHistory?: () => void;
 };
 
@@ -56,12 +60,14 @@ export const termContext = createContext<Term>({
   history: [],
   rerender: false,
   index: 0,
+  currentUser: "visitor",
+  setCurrentUser: () => {},
 });
 
 const Terminal = () => {
   const containerRef = useRef(null);
   const inputRef = useRef<HTMLInputElement>(null);
-
+  const [currentUser, setCurrentUser] = useState("visitor");
   const [inputVal, setInputVal] = useState("");
   const [cmdHistory, setCmdHistory] = useState<string[]>(["welcome"]);
   const [rerender, setRerender] = useState(false);
@@ -190,7 +196,7 @@ const Terminal = () => {
       )}
       <Form onSubmit={handleSubmit}>
         <label htmlFor="terminal-input">
-          <TermInfo /> <MobileBr />
+          <TermInfo currentUser={currentUser} /> <MobileBr />
           <MobileSpan>&#62;</MobileSpan>
         </label>
         <Input
@@ -217,11 +223,13 @@ const Terminal = () => {
           rerender,
           index,
           clearHistory,
+          currentUser,
+          setCurrentUser,
         };
         return (
           <div key={_.uniqueId(`${cmdH}_`)}>
             <div>
-              <TermInfo />
+              <TermInfo currentUser={currentUser} />
               <MobileBr />
               <MobileSpan>&#62;</MobileSpan>
               <span data-testid="input-command">{cmdH}</span>

@@ -1,9 +1,13 @@
 import { User, WebsiteName, Wrapper } from "./styles/TerminalInfo.styled";
+type Props = {
+  currentUser: string;
+};
 
-const TermInfo = () => {
+const TermInfo: React.FC<Props> = ({ currentUser }) => {
   return (
     <Wrapper>
-      <User>visitor</User>@<WebsiteName>terminal.caipora.dev</WebsiteName>:~$
+      <User>{currentUser}</User>@<WebsiteName>terminal.caipora.dev</WebsiteName>
+      :~$
     </Wrapper>
   );
 };

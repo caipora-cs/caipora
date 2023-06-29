@@ -11,6 +11,8 @@ import History from "./commands/History";
 import Projects from "./commands/Projects";
 import Socials from "./commands/Socials";
 import Themes from "./commands/Themes";
+import Login from "./commands/Login";
+// import Register from "./commands/Register";
 import { OutputContainer, UsageDiv } from "./styles/Output.styled";
 import { termContext } from "./Terminal";
 import { useContext } from "react";
@@ -21,7 +23,7 @@ type Props = {
 };
 
 const Output: React.FC<Props> = ({ index, cmd }) => {
-  const { arg } = useContext(termContext);
+  const { arg, currentUser, setCurrentUser } = useContext(termContext);
 
   const specialCmds = ["projects", "socials", "themes", "echo"];
 
@@ -47,7 +49,9 @@ const Output: React.FC<Props> = ({ index, cmd }) => {
           socials: <Socials />,
           themes: <Themes />,
           welcome: <Welcome />,
-          whoami: <GeneralOutput>visitor</GeneralOutput>,
+          whoami: <GeneralOutput>{currentUser}</GeneralOutput>,
+          // register: <Register setCurrentUser={setCurrentUser} />,
+          login: <Login setCurrentUser={setCurrentUser} />,
         }[cmd]
       }
     </OutputContainer>
