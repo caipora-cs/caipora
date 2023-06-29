@@ -37,12 +37,12 @@ Here's a glance at the key features the project offers:
 - CRUD ready 📨
 
 ## Tech Stack
-**Frontend** - [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), [Three.js](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene), [gsap](https://greensock.com/gsap/) , [Vite](https://vitejs.dev/)
+**Frontend** - [React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), [Three.js](https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene), [gsap](https://greensock.com/gsap/) , [Vite](https://vitejs.dev/) , [MaterialUI](https://mui.com/)
 **Styling** - [Styled-Components](https://styled-components.com/)  
 **State Management** - [ContextAPI](https://reactjs.org/docs/context.html)  
 **Testing** - [Vitest](https://vitest.dev/), [React Testing Library](https://testing-library.com/)  
-**Backend**- [Express](https://expressjs.com/), [Mongoose](https://mongoosejs.com/), [lodash](https://lodash.com/), [Nodemon](https://nodemon.io/)
-**DevDependencies**- [husky](https://typicode.github.io/husky/), [Prettier](https://prettier.io/), [Eslint](https://eslint.org/)
+**Backend**- [Express](https://expressjs.com/), [Mongoose](https://mongoosejs.com/), [lodash](https://lodash.com/), [Nodemon](https://nodemon.io/)  
+**DevDependencies**- [husky](https://typicode.github.io/husky/), [Prettier](https://prettier.io/), [Eslint](https://eslint.org/)  
 **Deployment** - [Vercel](https://vercel.com/)
 
 ## Running Locally
@@ -95,7 +95,7 @@ Node
 
 ```bash
 nodemon
-start
+npm start
 ```
 
 ## Inspiration and Credits
