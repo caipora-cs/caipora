@@ -93,7 +93,7 @@ These links are used to set the favicon and app icons for your webpage. Differen
             <a href="https://github.com/caipora-cs" target="_blank">Github</a>
           </li>
         </ul>
-        
+        <button id="back-to-main"> </button> 
         <!-- Into the terminal -->
         <h3>dev_mode:</h3>
         <ul>
@@ -103,11 +103,23 @@ These links are used to set the favicon and app icons for your webpage. Differen
               //When button is clicked hide the main menu and change display to show the canvas
               document.getElementById("dev-mode").addEventListener("click", function() {
                 document.getElementById("terminal-app").style.display = "block";
+                document.getElementById("back-to-main").style.display = "block";
                 const h1h3ulnavElements = document.querySelectorAll("h1, h3, ul, nav");
                 h1h3ulnavElements.forEach(element => {
                   element.style.display = "none";
                 });
               });
+              
+              //When button "back-to-main" return the main menu
+              document.getElementById("back-to-main").addEventListener("click", function() {
+                document.getElementById("terminal-app").style.display = "none";
+                document.getElementById("back-to-main").style.display = "none";
+                const h1h3ulnavElements = document.querySelectorAll("h1, h3, ul, nav");
+                h1h3ulnavElements.forEach(element => {
+                  element.style.display = "block";
+                });
+              });
+
             </script>
           </li>
         </ul>

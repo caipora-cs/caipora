@@ -112,6 +112,30 @@ nav ul li {
     color: var(--text-color);
   }
 }
+
+#back-to-main {
+  /* position it on the superior left */
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-image: url("/volte.png");
+  background-size: 54px 64px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  border: none;
+  transition-duration: 0.4s;
+  display: none;
+}
+
+#back-to-main:hover {
+  background-color: grey;
+  border-radius: 8px;
+}
+
+
 /*Add a icon for the button id:dev-mode, get the image added to 50x50 pixels */
 #dev-mode {
   background-image: url("/terminal_de_codigo.png");
