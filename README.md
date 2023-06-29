@@ -1,6 +1,6 @@
 ## caipora-portifolio
 
-This project represents an advanced endeavor in Internet Application Programming as part of the IT Bachelor's program at the Institute of Professional Training, Portugal. The driving objective is to ensure the design remains modular and current with the latest full-stack technologies.
+This project represents an advanced endeavor in Internet Application Programming as part of the IT Bachelor's program at the IPT, Portugal. The driving objective is to ensure the design remains modular and current with the latest full-stack technologies.
 
 The website is themed around the concept of "Building in Public," where users can showcase their ongoing and past projects. It serves as an interactive portfolio for potential employers, colleagues, or other interested parties.
 
