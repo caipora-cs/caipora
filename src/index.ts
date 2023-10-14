@@ -19,6 +19,10 @@ app.use(compression());
 app.use(cookieParser());
 app.use(bodyParser.json());
 
+app.use(cors({
+  origin: 'http://localhost:5173'
+}))
+
 //Express server
 const server = http.createServer(app);
 
