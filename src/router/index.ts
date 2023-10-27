@@ -1,8 +1,6 @@
-import express from "express";
-
-import authentication from "./auth";
-import users from "./users";
-
+const express = require("express");
+const authentication = require("./auth");
+const users = require("./users");
 const router = express.Router();
 
 export default (): express.Router => {
