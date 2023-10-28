@@ -1,12 +1,12 @@
+import http from "http";
+import bodyParser from "body-parser";
+import cookieParser from "cookie-parser";
+import compression from "compression";
+import cors from "cors";
+import router from "./router";
+import mongoose from "mongoose";
 //Initialize Express App
 const app = require("express")();
-const http = require("http").createServer(app);
-const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser");
-const compression = require("compression");
-const cors = require("cors");
-const router = require("./router/index.ts");
-const mongoose = require("mongoose");
 
 
 //Express setup
@@ -36,7 +36,7 @@ const MONGO_URL =
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGO_URL);
-mongoose.connection.on("error", (error) => console.log(error));
+mongoose.connection.on("error", (error: Error) => console.log(error));
 
 //Router
 app.use("/", router());
