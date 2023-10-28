@@ -23,6 +23,19 @@ app.use(cors({
   origin: 'http://localhost:5173'
 }))
 
+//Main routes
+app.use((req, res, next) => {
+  res.setHeader(
+    'Content-Security-Policy',
+    "default-src 'self' http://localhost:8080;"
+  );
+  next();
+});
+
+app.get('/', (req, res) =>{
+  res.sendFile(__dirname + '/../index.html');
+});
+
 //Express server
 const server = http.createServer(app);
 
