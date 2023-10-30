@@ -13,6 +13,9 @@ export default defineConfig({
       registerType: "autoUpdate",
     }),
   ],
+  build: {
+    outDir: 'dist',
+  },
   test: {
     globals: true,
     environment: 'jsdom',
