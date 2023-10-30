@@ -5,9 +5,9 @@ import compression from "compression";
 import cors from "cors";
 import router from "./router";
 import mongoose from "mongoose";
+import express from "express";
 //Initialize Express App
-const app = require("express")();
-
+export const app = express();
 
 //Express setup
 app.use(
@@ -21,27 +21,21 @@ app.use(bodyParser.json());
 
 app.use(cors({
   origin: 'http://localhost:5173'
-}))
+}));
 
-//Main routes
-app.use((req, res, next) => {
-  res.setHeader(
-    'Content-Security-Policy',
-    "default-src 'self' http://localhost:8080;"
-  );
-  next();
+app.get('/api/test', (_, res) => 
+    res.json({ greeting: "Hello" }
+));
+
+app.listen(8080, () => {
+  console.log (process.env['PORT']);
 });
-
-app.get('/', (req, res) =>{
-  res.sendFile(__dirname + '/../index.html');
-});
-
 //Express server
-const server = http.createServer(app);
+// const server = http.createServer(app);
 
-server.listen(8080, () => {
-  console.log("Server running on http://localhost:8080/");
-});
+// server.listen(8080, () => {
+//   console.log("Server running on http://localhost:8080/");
+// });
 
 //MongoDB setup and initialization
 const MONGO_URL =
