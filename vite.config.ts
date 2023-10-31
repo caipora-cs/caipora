@@ -15,9 +15,22 @@ export default defineConfig({
     }),
     express('src/index.ts')
   ],
-  base: '/',
   build: {
     outDir: 'dist',
+    sourcemap: true,
+    emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        index: "./index.html",
+        main: "./src/main.ts",  // Your main.ts for Three.js
+        term: "./src/main.tsx",  // Your main.tsx for the terminal app
+      },
+      output: {
+        entryFileNames: 'src/[name].js',
+        chunkFileNames: 'src/[name].js',
+        assetFileNames: 'src/[name].[ext]',
+      }
+    }
   },
   publicDir: 'public',
   test: {
