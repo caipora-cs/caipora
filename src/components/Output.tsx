@@ -50,7 +50,7 @@ const Output: React.FC<Props> = ({ index, cmd }) => {
           themes: <Themes />,
           welcome: <Welcome />,
           whoami: <GeneralOutput>{currentUser}</GeneralOutput>,
-          register: <Register  />,
+          register: <Register />,
           login: <Login setCurrentUser={setCurrentUser} />,
         }[cmd]
       }

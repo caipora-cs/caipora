@@ -88,4 +88,3 @@ const Login: React.FC<LoginProps> = ({ setCurrentUser }) => {
 };
 
 export default Login;
-

@@ -9,6 +9,9 @@ import express from "express";
 //Initialize Express App
 export const app = express();
 
+//Use public folder to serve static files
+app.use(express.static("public"));
+
 //Express setup
 app.use(
   cors({
@@ -19,23 +22,17 @@ app.use(compression());
 app.use(cookieParser());
 app.use(bodyParser.json());
 
-app.use(cors({
-  origin: 'http://localhost:5173'
-}));
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
 
-app.get('/api/test', (_, res) => 
-    res.json({ greeting: "Hello" }
-));
+app.get("/api/test", (_, res) => res.json({ greeting: "Hello" }));
 
 app.listen(8080, () => {
-  console.log (process.env['PORT']);
+  console.log(process.env["PORT"]);
 });
-//Express server
-// const server = http.createServer(app);
-
-// server.listen(8080, () => {
-//   console.log("Server running on http://localhost:8080/");
-// });
 
 //MongoDB setup and initialization
 const MONGO_URL =

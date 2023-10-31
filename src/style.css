@@ -135,7 +135,6 @@ nav ul li {
   border-radius: 8px;
 }
 
-
 /*Add a icon for the button id:dev-mode, get the image added to 50x50 pixels */
 #dev-mode {
   background-image: url("/terminal_de_codigo.png");

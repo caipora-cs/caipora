@@ -14,7 +14,11 @@ const Register = () => {
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const registerUser = async (username: string, email: string, password: string) => {
+  const registerUser = async (
+    username: string,
+    email: string,
+    password: string
+  ) => {
     const response = await fetch("http://localhost:8080/auth/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -25,7 +29,7 @@ const Register = () => {
       console.log("Registration successful, user:", data);
     } else {
       console.error("Registration failed:", response.statusText);
-      }
+    }
   };
 
   const handleRegister = async () => {
@@ -58,20 +62,20 @@ const Register = () => {
         label="Username"
         variant="outlined"
         value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        onChange={e => setUsername(e.target.value)}
       />
       <TextField
         label="Email"
         variant="outlined"
         value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        onChange={e => setEmail(e.target.value)}
       />
       <TextField
         label="Password"
         variant="outlined"
         type="password"
         value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        onChange={e => setPassword(e.target.value)}
       />
       <Button variant="contained" color="primary" onClick={handleRegister}>
         Register
@@ -97,4 +101,3 @@ const Register = () => {
 };
 
 export default Register;
-

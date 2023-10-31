@@ -15,9 +15,11 @@ export default defineConfig({
     }),
     express('src/index.ts')
   ],
+  base: '/',
   build: {
     outDir: 'dist',
   },
+  publicDir: 'public',
   test: {
     globals: true,
     environment: 'jsdom',
