@@ -1,4 +1,6 @@
 ## caipora-portifolio
+![ts](https://badgen.net/badge/Built%20With/TypeScript/blue?style=flat-square)
+![Vercel](https://vercelbadge.vercel.app/api/caipora-cs/caipora)
 
 This project represents an advanced endeavor in full-stack application programming as part of the IT Bachelor's program at the IPT, Portugal. The driving objective is to ensure the design remains modular and current with the latest full-stack technologies.
 
