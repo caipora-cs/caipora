@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://caipora.vercel.app",
   })
 );
 
@@ -35,8 +35,7 @@ app.listen(8080, () => {
 });
 
 //MongoDB setup and initialization
-const MONGO_URL =
-  "mongodb+srv://caipora:zjiab8hr@cluster0.ivafpk8.mongodb.net/?retryWrites=true&w=majority";
+const MONGO_URL = process.env.MONGO_URL;
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGO_URL);
