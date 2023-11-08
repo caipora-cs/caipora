@@ -64,14 +64,8 @@ const socials = [
   {
     id: 3,
     title: "Linkedin",
-    url: "www.linkedin.com/in/joao-venancio",
+    url: "https://linkedin.com/in/joao-venancio",
     tab: 1,
-  },
-  {
-    id: 4,
-    title: "Instagram",
-    url: "https://instagram.com/",
-    tab: 0,
   },
 ];
 
