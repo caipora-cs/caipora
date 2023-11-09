@@ -11,8 +11,8 @@
     "coverage": "vitest run --coverage",
     "prepare": "husky install",
     "lint": "eslint .",
-    "format:check": "prettier --check .",
-    "format": "prettier --write .",
+    "format:check": "prettier . --check .",
+    "format": "prettier . --write .",
     "start": "nodemon"
   },
   "dependencies": {
@@ -24,6 +24,7 @@
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "gsap": "^3.12.1",
     "helmet": "^7.0.0",

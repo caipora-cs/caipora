@@ -1,4 +1,4 @@
-import http from "http";
+import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import compression from "compression";
@@ -35,6 +35,7 @@ app.listen(8080, () => {
 });
 
 //MongoDB setup and initialization
+dotenv.config();
 const MONGO_URL = process.env.MONGO_URL;
 
 mongoose.Promise = Promise;

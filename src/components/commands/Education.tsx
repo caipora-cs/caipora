@@ -18,15 +18,23 @@ const Education: React.FC = () => {
 const eduBg = [
   {
     title: "Bachelor in Information Technology",
-    desc: "Instituto Poltecnico de Tomar | 2021 ~ 2024",
+    desc: "Instituto Politecnico de Tomar | 2021 ~ 2024",
   },
   {
-    title: "",
-    desc: "",
+    title: "Relevant Coursework",
+    desc: "Networking, Systems Administration, Linear Algebra, Data Structures and Algorithms, Machine Learning, Information Retrieval, Database Architecture and Management, Project Management, Security",
   },
   {
-    title: "",
-    desc: "",
+    title: "Programing Languages",
+    desc: "C, C#, Python, PHP, Javascript, Typescript, SQL, Flutter",
+  },
+  {
+    title: "Developer Tools",
+    desc: "Azure, Wireshark. Nmap, TCPDump, Docker, Active Directory, CentOS, VMWare, Virtual Box, Burp Suite, Node.js, React, Three.js",
+  },
+  {
+    title: "Languages",
+    desc: "English (C2), German (A2), Portuguese (Native)",
   },
 ];
 
