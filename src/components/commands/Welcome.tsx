@@ -37,7 +37,7 @@ const Welcome: React.FC = () => {
         <Seperator>----</Seperator>
         <div>
           This project's source code can be found in this project's{" "}
-          <Link href="https://github.com/caipora-cs/caipora">GitHub repo</Link>.
+            <Link href="https://github.com/caipora-cs/caipora" target="_blank" rel="noopener noreferrer">GitHub repo</Link>
         </div>
         <Seperator>----</Seperator>
         <div>
