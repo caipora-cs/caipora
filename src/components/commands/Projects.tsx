@@ -56,27 +56,27 @@ const Projects: React.FC = () => {
 const projects = [
   {
     id: 1,
-    title: "Blog",
-    desc: "My personal blog where I can write down my thoughts and experiences.",
-    url: "",
+    title: "Caipora World&Terminal App (Typescritpt)",
+    desc: "A Full-Stack Portifolio 3d app with a terminal-style front-end made for recruiters",
+    url: "https://github.com/caipora-cs/caipora",
   },
   {
     id: 2,
-    title: "Python Scripting",
-    desc: "",
-    url: "",
+    title: "School Desk Back-End(C#)",
+    desc: "WinForm, Entity Framework and SQL Server Back End support for a School Desk utility.",
+    url: "https://github.com/caipora-cs/fullstack-school-backend",
   },
   {
     id: 3,
-    title: "Authentication API",
-    desc: "A RESTful API developed for this site.",
+    title: "Attenborough's Cosmic Chronicles",
+    desc: "A Text to Speech model analysis and research paper based on Sir David Attenborough's voice",
     url: "",
   },
   {
     id: 4,
-    title: "Test",
-    desc: "Just testing",
-    url: "https://something.dev/",
+    title: "Security and Performance Acessment",
+    desc: "A Authentication Lab made to test common attack vectors and hardening of API and Authentication Module",
+    url: "",
   },
 ];
 
